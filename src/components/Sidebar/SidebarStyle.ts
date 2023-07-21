@@ -132,7 +132,9 @@ export const CollectionItem = styled.div`
 `;
 
 export const CollectionItemImage = styled.img`
-  min-width: 48px;
+  max-width: 48px;
+  max-height: 48px;
+  width: 48px
   height: 48px;
   border-radius: 10px;
   object-fit: cover;

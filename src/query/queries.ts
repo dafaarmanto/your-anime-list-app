@@ -10,6 +10,7 @@ export const GET_TRENDING_ANIME = gql`
         }
         coverImage {
           extraLarge
+          large
         }
       }
     }

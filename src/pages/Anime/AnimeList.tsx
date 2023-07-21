@@ -51,9 +51,8 @@ const AnimeList = () => {
               <Link to={`/anime/${anime.id}`}>
                 <AnimeCard key={index}>
                   <AnimeCardImage
-                    src={anime.coverImage.extraLarge}
+                    src={anime.coverImage.large}
                     alt="Cover Image"
-                    loading="lazy"
                   />
                   <AnimeCardTitle>{anime.title.romaji}</AnimeCardTitle>
                 </AnimeCard>
