@@ -1,4 +1,8 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, ReactNode, SetStateAction } from "react";
+
+export interface LayoutProps {
+  children: ReactNode;
+}
 
 export interface AnimeCollectionsContextType {
   collections: CollectionType[];
