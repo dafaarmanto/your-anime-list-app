@@ -34,9 +34,8 @@ const EditCollectionModal: FC<{
     description: collections[collectionIndex].description,
   });
 
-  const handleInputChange = (e: SyntheticEvent) => {
-    const { name, value } = e.target as HTMLInputElement;
-
+  const handleInputChange = (e: any) => {
+    const { name, value } = e.target;
     const filteredValue = value.replace(/[^a-zA-Z0-9\s]/g, "");
 
     setFormData((prev) => ({
@@ -45,9 +44,10 @@ const EditCollectionModal: FC<{
     }));
   };
 
-  const checkDuplicate = (name: string) => {
+  const checkDuplicate = (name: string, currentCollectionId: string) => {
     return collections.every(
-      (collection: CollectionType) => collection.name !== name
+      (collection: CollectionType) =>
+        collection.name !== name || collection.id === currentCollectionId
     );
   };
 
@@ -56,14 +56,12 @@ const EditCollectionModal: FC<{
 
     const { name, description } = formData;
 
-    if (!name.trim() || !checkDuplicate(name.trim())) {
+    if (!name.trim() || !checkDuplicate(name.trim(), collectionId)) {
       setError("This name already exists.");
       return;
     }
 
-    if (collectionIndex !== -1) {
-      editCollection(collectionId, name, description);
-    }
+    editCollection(collectionId, name, description);
 
     setFormData({
       name: "",

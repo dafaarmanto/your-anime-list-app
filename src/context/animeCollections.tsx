@@ -57,12 +57,12 @@ const AnimeCollectionsProvider = ({ children }: { children: ReactNode }) => {
   const editCollection = (
     collectionId: string,
     newName: string,
-    description: string
+    newDescription: string
   ) => {
     setCollections((prevCollections: CollectionType[]) =>
       prevCollections.map((collection: CollectionType) =>
         collection.id === collectionId
-          ? { ...collection, name: newName, description }
+          ? { ...collection, name: newName, description: newDescription }
           : collection
       )
     );
