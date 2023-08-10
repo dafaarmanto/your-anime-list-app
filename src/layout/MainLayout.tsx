@@ -7,7 +7,7 @@ const Layout = styled.div`
   display: flex;
   gap: 38px;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
 `;
 
